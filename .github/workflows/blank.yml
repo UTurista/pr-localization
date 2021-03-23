@@ -25,4 +25,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: .\check-localization.exe
+        run: |
+          @echo | call check-localization.exe | findstr /c:"All files good" || exit -1
+        
+        
